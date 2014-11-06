@@ -33,6 +33,8 @@ class SiteTreeWalkPrint implements SiteTreeWalkListener {
 	 */
 	public function run(SiteTree $p, $l = 0, $v = false) {
 
+		$retVal = true;
+		
 		// print the record
 		for ($i = 0; $i < $l; $i++) {
 			echo "\t";
@@ -44,11 +46,12 @@ class SiteTreeWalkPrint implements SiteTreeWalkListener {
 
 		if (in_array($p->class, $this->excludedPageType)) {
 			echo " *** Excluded from processing";
-		}
+			$retVal = false;
+		} 
 
 		echo "\n";
 
-		return true;
+		return $retVal;
 	}
 
 }

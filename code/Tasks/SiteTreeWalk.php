@@ -5,7 +5,7 @@ class SiteTreeWalk extends BuildTask {
 	/*
 	 * If verbose == true the report will be more complete
 	 */
-	private $verbose = false;
+	private $verbose = true;
 
 	/*
 	 * Traversed page number
