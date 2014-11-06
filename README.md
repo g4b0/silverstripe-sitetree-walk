@@ -22,6 +22,7 @@ Install the module through [composer](http://getcomposer.org):
 
 Before running the task you need to implement your logic extending `SiteTreeWalkListener` interface. An example is provided 
 with `SiteTreeWalkPrint`, that simply prints out the page title. To enable it set its member variable `SiteTreeWalkPrint::$enabled` to true.
+`SiteTreeWalkListener` implementor's run() method should return true for the processed pages, false for the excluded ones.
 Following the output of the sample:
 
 ```bash
