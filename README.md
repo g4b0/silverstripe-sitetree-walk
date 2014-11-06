@@ -20,8 +20,9 @@ Install the module through [composer](http://getcomposer.org):
 
 ## Running the task.
 
-Before running the task you need to implement your logic extending SiteTreeWalkListener interface. An example is provided 
-with SiteTreeWalkPrint, that simply prints out the page title. Following the output of the sample:
+Before running the task you need to implement your logic extending `SiteTreeWalkListener` interface. An example is provided 
+with `SiteTreeWalkPrint`, that simply prints out the page title. To enable it set its member variable `SiteTreeWalkPrint::$enabled` to true.
+Following the output of the sample:
 
 ```bash
 #sake dev/tasks/SiteTreeWalk "flush=all"

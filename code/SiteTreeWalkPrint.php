@@ -5,7 +5,7 @@ class SiteTreeWalkPrint implements SiteTreeWalkListener {
 	/**
 	 * Should this Implementor be called?
 	 */
-	private $enabled = true;
+	private $enabled = false;
 
 	/*
 	 * Page Type exclusion array
