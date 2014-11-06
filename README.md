@@ -15,7 +15,8 @@ of SiteTreeWalkListener interface letting them doing things over each page.
 
 Install the module through [composer](http://getcomposer.org):
 
-	composer zirak/sitetree-walk
+	composer require --no-update zirak/sitetree-walk
+	composer update --no-dev zirak/sitetree-walk
 
 ## Running the task.
 
@@ -23,7 +24,7 @@ Before running the task you need to implement your logic extending SiteTreeWalkL
 with SiteTreeWalkPrint, that simply prints out the page title. Following the output of the sample:
 
 ```bash
-# sake dev/tasks/SiteTreeWalk "flush=all"
+#sake dev/tasks/SiteTreeWalk "flush=all"
 Running Task SiteTreeWalk
 
 Following SiteTreeWalkListener Implementors will be executed: 
