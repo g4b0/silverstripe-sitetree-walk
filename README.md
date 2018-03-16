@@ -9,7 +9,7 @@ of SiteTreeWalkListener interface letting them doing things over each page.
 
 ## Requirements
 
- * SilverStripe 3.1
+ * SilverStripe >= 3.1 < 4.0
 
 ## Installation
 
