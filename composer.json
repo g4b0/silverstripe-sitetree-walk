@@ -1,7 +1,7 @@
 {
     "name": "g4b0/sitetree-walk",
     "description": "Walk through the SiteTree, and hooks implementors of SiteTreeWalkListener interface letting them doing things over each page.",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "sitetree", "task"],
     "license": "GPL-2.0-only",
     "authors": [{
@@ -11,5 +11,13 @@
     "require": {
         "silverstripe/framework": "~4.1",
         "silverstripe/cms": "~4.1"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "g4b0\\SiteTreeWalk\\": "src/",
+            "g4b0\\SiteTreeWalk\\\\Tasks\\": "src/Tasks/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

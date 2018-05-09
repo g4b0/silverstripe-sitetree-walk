@@ -1,5 +1,7 @@
 <?php
 
+namespace g4b0\SiteTreeWalk\Tasks;
+
 use SilverStripe\Dev\BuildTask;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\ORM\DataObject;

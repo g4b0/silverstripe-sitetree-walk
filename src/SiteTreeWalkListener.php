@@ -1,5 +1,7 @@
 <?php
 
+namespace g4b0\SiteTreeWalk;
+
 use SilverStripe\CMS\Model\SiteTree;
 
 /**
