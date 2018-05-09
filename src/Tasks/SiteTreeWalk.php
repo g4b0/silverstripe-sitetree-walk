@@ -1,5 +1,10 @@
 <?php
 
+use SilverStripe\Dev\BuildTask;
+use SilverStripe\Core\ClassInfo;
+use SilverStripe\ORM\DataObject;
+use SilverStripe\CMS\Model\SiteTree;
+
 class SiteTreeWalk extends BuildTask {
 	
 	/*
@@ -66,7 +71,8 @@ class SiteTreeWalk extends BuildTask {
 		}
 		echo "\n";
 
-		$rootPages = DataObject::get('SiteTree', 'ParentID=0', 'Sort ASC');
+		//$rootPages = DataObject::get('SiteTree', 'ParentID=0', 'Sort ASC');
+		$rootPages = SiteTree::get()->filter(['ParentID' => 0]);
 		foreach ($rootPages as $rp) {
 			/* var $rp SiteTree */
 			$this->processChildren($rp);
@@ -115,15 +121,16 @@ class SiteTreeWalk extends BuildTask {
 		$this->traversed++;
 
 		// Travered class array population
-		if (!in_array($p->class, $this->traversedPageType)) {
-			array_push($this->traversedPageType, $p->class);
+		$class = get_class($p);
+		if (!in_array($class, $this->traversedPageType)) {
+			array_push($this->traversedPageType, $class);
 		}
 
 		foreach ($this->implementors as $implementor => $controller) {
 			if ($controller->run($p, $l, $this->verbose)) {
 				$this->processed[$implementor] += 1;
-				if (!in_array($p->class, $this->processedPageType[$implementor])) {
-					array_push($this->processedPageType[$implementor], $p->class);
+				if (!in_array($class, $this->processedPageType[$implementor])) {
+					array_push($this->processedPageType[$implementor], $class);
 				}
 			}
 		}

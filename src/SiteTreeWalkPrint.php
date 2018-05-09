@@ -1,11 +1,13 @@
 <?php
 
+use SilverStripe\CMS\Model\SiteTree;
+
 class SiteTreeWalkPrint implements SiteTreeWalkListener {
 
 	/**
 	 * Should this Implementor be called?
 	 */
-	private $enabled = false;
+	private $enabled = true;
 
 	/*
 	 * Page Type exclusion array
@@ -41,7 +43,7 @@ class SiteTreeWalkPrint implements SiteTreeWalkListener {
 		}
 		echo "$p->Title ";
 		if ($v) {
-			echo "[$p->class] ";
+			echo "[" . get_class($p) . "] ";
 		}
 
 		if (in_array($p->class, $this->excludedPageType)) {
