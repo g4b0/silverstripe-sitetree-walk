@@ -9,14 +9,16 @@ of SiteTreeWalkListener interface letting them doing things over each page.
 
 ## Requirements
 
- * SilverStripe >= 3.1 < 4.0
+ * SilverStripe >= 4.1 < 5.0
+
+ For 3.x installations refer to the 1.x version
 
 ## Installation
 
 Install the module through [composer](http://getcomposer.org):
 
-	composer require --no-update zirak/sitetree-walk
-	composer update --no-dev zirak/sitetree-walk
+	composer require --no-update g4b0/sitetree-walk
+	composer update --no-dev g4b0/sitetree-walk
 
 ## Running the task.
 
