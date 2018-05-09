@@ -1,15 +1,15 @@
 {
-    "name": "zirak/sitetree-walk",
+    "name": "g4b0/sitetree-walk",
     "description": "Walk through the SiteTree, and hooks implementors of SiteTreeWalkListener interface letting them doing things over each page.",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "sitetree", "task"],
     "license": "GPL-2.0-only",
     "authors": [{
-        "name": "Gabriele Brosulo - Zirak",
-        "email": "gabriele.brosulo@zirak.it"
+        "name": "Gabriele Brosulo",
+        "email": "gabriele@brosulo.net"
     }],
     "require": {
-        "silverstripe/framework": "~3.1",
-        "silverstripe/cms": "~3.1"
+        "silverstripe/framework": "~4.1",
+        "silverstripe/cms": "~4.1"
     }
 }

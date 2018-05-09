@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\CMS\Model\SiteTree;
+
 /**
  * Listener interface to implement in order to been hocked during SiteTreeWalk
  */
