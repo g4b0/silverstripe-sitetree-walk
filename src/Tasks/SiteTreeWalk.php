@@ -10,6 +10,11 @@ use SilverStripe\CMS\Model\SiteTree;
 class SiteTreeWalk extends BuildTask {
 	
 	/*
+	 * Ensure that we can still run the task via sake dev/tasks/SiteTreeWalk
+	 */
+	private static $segment = 'SiteTreeWalk';
+	
+	/*
 	 * If verbose == true the report will be more complete
 	 */
 	private $verbose = true;
