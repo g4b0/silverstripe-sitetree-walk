@@ -1,6 +1,6 @@
 <?php
 
-namespace g4b0\SiteTreeWalk
+namespace g4b0\SiteTreeWalk;
 
 use g4b0\SiteTreeWalk\SiteTreeWalkListener;
 use SilverStripe\CMS\Model\SiteTree;
