@@ -15,9 +15,11 @@
     "autoload": {
         "psr-4": {
             "g4b0\\SiteTreeWalk\\": "src/",
-            "g4b0\\SiteTreeWalk\\\\Tasks\\": "src/Tasks/"
+            "g4b0\\SiteTreeWalk\\Tasks\\": "src/Tasks/"
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
+
+
