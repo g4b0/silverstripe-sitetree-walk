@@ -10,12 +10,6 @@ use SilverStripe\CMS\Model\SiteTree;
 interface SiteTreeWalkListener {
 
 	/**
-	 * Let the SiteTreeWalker know if it have to execute this 
-	 * listenr or not
-	 */
-	public function isEnabled();
-
-	/**
 	 * The running function. Do things over the page.
 	 * 
 	 * @param SiteTree $p page to process

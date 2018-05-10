@@ -7,11 +7,6 @@ use SilverStripe\CMS\Model\SiteTree;
 
 class SiteTreeWalkPrint implements SiteTreeWalkListener {
 
-	/**
-	 * Should this Implementor be called?
-	 */
-	private $enabled = true;
-
 	/*
 	 * Page Type exclusion array
 	 */
@@ -19,14 +14,6 @@ class SiteTreeWalkPrint implements SiteTreeWalkListener {
 			'ErrorPage',
 			'RedirectorPage',
 	);
-
-	/**
-	 * Let the SiteTreeWalker know if it have to execute this 
-	 * listenr or not
-	 */
-	public function isEnabled() {
-		return $this->enabled;
-	}
 
 	/**
 	 * The running function. Do things over the page.

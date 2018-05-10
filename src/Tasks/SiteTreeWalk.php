@@ -6,6 +6,7 @@ use SilverStripe\Dev\BuildTask;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Core\Config\Config;
 
 class SiteTreeWalk extends BuildTask {
 	
@@ -52,13 +53,16 @@ class SiteTreeWalk extends BuildTask {
 		$this->processedPageType = array();
 		$this->implementors = array();
 
+		// Read enabled implementors from config
+		$enabled = Config::inst()->get('SiteTreeWalk', 'enabled');
+
 		/*
 		 * Implementors inizialization
 		 */
-		$implementros = ClassInfo::implementorsOf('SiteTreeWalkListener');
+		$implementros = ClassInfo::implementorsOf('g4b0\SiteTreeWalk\SiteTreeWalkListener');
 		foreach ($implementros as $implementor) {
 			$this->implementors[$implementor] = new $implementor;
-			if ($this->implementors[$implementor]->isEnabled()) {
+			if (in_array(get_class($this->implementors[$implementor]), $enabled)) {
 				$this->processed[$implementor] = 0;
 				$this->processedPageType[$implementor] = array();
 			} else {
@@ -78,7 +82,6 @@ class SiteTreeWalk extends BuildTask {
 		}
 		echo "\n";
 
-		//$rootPages = DataObject::get('SiteTree', 'ParentID=0', 'Sort ASC');
 		$rootPages = SiteTree::get()->filter(['ParentID' => 0]);
 		foreach ($rootPages as $rp) {
 			/* var $rp SiteTree */

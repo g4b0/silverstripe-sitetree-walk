@@ -1,3 +1,5 @@
 ---
 Name: sitetree-walk
 ---
+SiteTreeWalk:
+  enabled: ['g4b0\SiteTreeWalk\SiteTreeWalkPrint']
